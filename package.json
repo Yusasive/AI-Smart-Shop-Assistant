@@ -1,0 +1,19 @@
+{
+  "name": "ai-smart-shopping-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vite build --config vite-tailwind-build.config.ts",
+    "watch:tailwind": "tailwindcss -i src/sidepanel.css -o dist/sidepanel.css --watch",
+    "prepare-dist": "rm -rf dist && mkdir -p dist && cp -r public dist/"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vite": "^5.0.0",
+    "tailwindcss": "^4.0.0",
+    "postcss": "^8.0.0",
+    "autoprefixer": "^10.0.0",
+    "esbuild": "^0.18.0"
+  }
+}

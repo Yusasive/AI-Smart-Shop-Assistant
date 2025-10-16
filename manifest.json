@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "AI Smart Shopping Assistant",
+  "description": "Summarize product pages, extract pros & cons from reviews, and flag suspicious sellers using Chrome built-in AI (Gemini Nano + Chrome AI APIs).",
+  "version": "0.1.0",
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "activeTab",
+    "scripting",
+    "sidePanel",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.amazon.com/*",
+    "https://*.ebay.com/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "dist/service_worker.js"
+  },
+  "action": {
+    "default_title": "AI Smart Shopping"
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.amazon.com/*",
+        "https://*.ebay.com/*"
+      ],
+      "js": [
+        "dist/content_script.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "dist/sidepanel.html"
+  }
+}

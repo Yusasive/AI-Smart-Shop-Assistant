@@ -1,0 +1,1 @@
+Place your extension icons in assets/icons and any static public assets here.
